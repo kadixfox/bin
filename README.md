@@ -1,5 +1,6 @@
 # bin
-handy doodads from my ~/bin
+handy doodads from my ~/bin\
+I aim to make these plug-and-play but I cannot guarantee these will work on your system. For educational purposes only.
 
 ## trimgrade.sh
 trim x seconds from the end of a video, apply haldclut color grading, and output 'out.mkv'
