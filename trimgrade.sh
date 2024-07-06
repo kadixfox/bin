@@ -9,3 +9,6 @@ inputDur=`ffprobe -v error -select_streams v:0 -show_entries stream=duration -of
 outputDur=`bc <<< "$inputDur"-"$2"`
 
 ffmpeg -hwaccel auto -y -i "$1" -movflags use_metadata_tags -map 0 -t "$outputDur" -vf "movie=$3, [in] haldclut" "$4"
+
+exiftool -tagsFromFile "$1" "$4"
+rm -vf "$1"_original
