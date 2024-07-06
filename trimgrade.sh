@@ -8,4 +8,4 @@
 inputDur=`ffprobe -v error -select_streams v:0 -show_entries stream=duration -of default=noprint_wrappers=1:nokey=1 "$1"`
 outputDur=`bc <<< "$inputDur"-"$2"`
 
-ffmpeg -hwaccel auto -y -i "$1" -map 0 -t "$outputDur" -vf "movie=$3, [in] haldclut" -map_metadata "$4"
+ffmpeg -hwaccel auto -y -i "$1" -map 0 -t "$outputDur" -vf "movie=$3, [in] haldclut" "$4" -map_metadata
