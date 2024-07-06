@@ -10,6 +10,6 @@ outputDur=`bc <<< "$inputDur"-"$2"`
 
 ffmpeg -hwaccel auto -y -i "$1" -map 0 -t "$outputDur" -vf "movie=$3, [in] haldclut" "$4"
 
-exiftool -verbose -TagsFromFile "$4" "$1"
+exiftool -verbose -TagsFromFile "$4" "-all:all>all:all" "$1"
 
 rm -vf "$1"_original
