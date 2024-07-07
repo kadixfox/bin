@@ -200,7 +200,6 @@ evaltags(){
 	case ${tagsarr[$tag]} in
 		Model:*)
 			model=`awk '{print $2"_"$3"_"$4}' <<<${tagsarr[$tag]}`
-			echo "MODEL: $model"
 			returnedtags+=(model) ;;
 		DateTimeOriginal:*)
 			datetimeoriginal=`sed -e 's/:/./g' <<<${tagsarr[$tag]} | awk '{print $2"-"$3}'`
